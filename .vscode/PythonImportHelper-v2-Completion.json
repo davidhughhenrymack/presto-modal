@@ -1,0 +1,407 @@
+[
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "PurePosixPath",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "StringIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "modal",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "modal",
+        "description": "modal",
+        "detail": "modal",
+        "documentation": {}
+    },
+    {
+        "label": "Volume",
+        "importPath": "modal",
+        "description": "modal",
+        "isExtraImport": true,
+        "detail": "modal",
+        "documentation": {}
+    },
+    {
+        "label": "click",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "click",
+        "description": "click",
+        "detail": "click",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "StreamingResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "secrets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "secrets",
+        "description": "secrets",
+        "detail": "secrets",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "ci.prep_for_ci",
+        "description": "ci.prep_for_ci",
+        "peekOfCode": "def main(config: str, data: str):\n    \"\"\"Set the config to run for many epochs to test overfitting.\"\"\"\n    with open(config) as f:\n        cfg = yaml.safe_load(f.read())\n    cfg[\"wandb_project\"] = \"ci-llm-finetuning-overfit-sqlqa\"\n    cfg[\"seed\"] = 117  # always set a seed\n    cfg[\"save_strategy\"] = \"no\"\n    # turn off regularization\n    cfg[\"lora_dropout\"] = 0\n    cfg[\"weight_decay\"] = 0",
+        "detail": "ci.prep_for_ci",
+        "documentation": {}
+    },
+    {
+        "label": "Colors",
+        "kind": 6,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "class Colors:\n    \"\"\"ANSI color codes\"\"\"\n    GREEN = \"\\033[0;32m\"\n    BLUE = \"\\033[0;34m\"\n    GRAY = \"\\033[0;90m\"\n    BOLD = \"\\033[1m\"\n    END = \"\\033[0m\"",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "APP_NAME",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "APP_NAME = \"example-axolotl\"\nMINUTES = 60  # seconds\nHOURS = 60 * MINUTES\n# Axolotl image hash corresponding to main-20240705-py3.11-cu121-2.3.0\nAXOLOTL_REGISTRY_SHA = (\n    \"9578c47333bdcc9ad7318e54506b9adaf283161092ae780353d506f7a656590a\"\n)\nALLOW_WANDB = os.environ.get(\"ALLOW_WANDB\", \"false\").lower() == \"true\"\naxolotl_image = (\n    modal.Image.from_registry(f\"winglian/axolotl@sha256:{AXOLOTL_REGISTRY_SHA}\")",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "MINUTES",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "MINUTES = 60  # seconds\nHOURS = 60 * MINUTES\n# Axolotl image hash corresponding to main-20240705-py3.11-cu121-2.3.0\nAXOLOTL_REGISTRY_SHA = (\n    \"9578c47333bdcc9ad7318e54506b9adaf283161092ae780353d506f7a656590a\"\n)\nALLOW_WANDB = os.environ.get(\"ALLOW_WANDB\", \"false\").lower() == \"true\"\naxolotl_image = (\n    modal.Image.from_registry(f\"winglian/axolotl@sha256:{AXOLOTL_REGISTRY_SHA}\")\n    .pip_install(",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "HOURS",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "HOURS = 60 * MINUTES\n# Axolotl image hash corresponding to main-20240705-py3.11-cu121-2.3.0\nAXOLOTL_REGISTRY_SHA = (\n    \"9578c47333bdcc9ad7318e54506b9adaf283161092ae780353d506f7a656590a\"\n)\nALLOW_WANDB = os.environ.get(\"ALLOW_WANDB\", \"false\").lower() == \"true\"\naxolotl_image = (\n    modal.Image.from_registry(f\"winglian/axolotl@sha256:{AXOLOTL_REGISTRY_SHA}\")\n    .pip_install(\n        \"huggingface_hub==0.23.2\",",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "AXOLOTL_REGISTRY_SHA",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "AXOLOTL_REGISTRY_SHA = (\n    \"9578c47333bdcc9ad7318e54506b9adaf283161092ae780353d506f7a656590a\"\n)\nALLOW_WANDB = os.environ.get(\"ALLOW_WANDB\", \"false\").lower() == \"true\"\naxolotl_image = (\n    modal.Image.from_registry(f\"winglian/axolotl@sha256:{AXOLOTL_REGISTRY_SHA}\")\n    .pip_install(\n        \"huggingface_hub==0.23.2\",\n        \"hf-transfer==0.1.5\",\n        \"wandb==0.16.3\",",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOW_WANDB",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "ALLOW_WANDB = os.environ.get(\"ALLOW_WANDB\", \"false\").lower() == \"true\"\naxolotl_image = (\n    modal.Image.from_registry(f\"winglian/axolotl@sha256:{AXOLOTL_REGISTRY_SHA}\")\n    .pip_install(\n        \"huggingface_hub==0.23.2\",\n        \"hf-transfer==0.1.5\",\n        \"wandb==0.16.3\",\n        \"fastapi==0.110.0\",\n        \"pydantic==2.6.3\",\n    )",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "axolotl_image",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "axolotl_image = (\n    modal.Image.from_registry(f\"winglian/axolotl@sha256:{AXOLOTL_REGISTRY_SHA}\")\n    .pip_install(\n        \"huggingface_hub==0.23.2\",\n        \"hf-transfer==0.1.5\",\n        \"wandb==0.16.3\",\n        \"fastapi==0.110.0\",\n        \"pydantic==2.6.3\",\n    )\n    .env(",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "vllm_image",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "vllm_image = (\n    modal.Image.from_registry(\"nvidia/cuda:12.1.0-base-ubuntu22.04\", add_python=\"3.10\")\n    .pip_install(\"vllm==0.5.1\", \"torch==2.3.0\")\n    .entrypoint([])\n)\napp = modal.App(\n    APP_NAME,\n    secrets=[\n        modal.Secret.from_name(\"huggingface\"),\n        modal.Secret.from_dict({\"ALLOW_WANDB\": os.environ.get(\"ALLOW_WANDB\", \"false\")}),",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "app = modal.App(\n    APP_NAME,\n    secrets=[\n        modal.Secret.from_name(\"huggingface\"),\n        modal.Secret.from_dict({\"ALLOW_WANDB\": os.environ.get(\"ALLOW_WANDB\", \"false\")}),\n        *([modal.Secret.from_name(\"wandb\")] if ALLOW_WANDB else []),\n    ],\n)\n# Volumes for pre-trained models and training runs.\npretrained_volume = modal.Volume.from_name(",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "pretrained_volume",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "pretrained_volume = modal.Volume.from_name(\n    \"example-pretrained-vol\", create_if_missing=True\n)\nruns_volume = modal.Volume.from_name(\"example-runs-vol\", create_if_missing=True)\nVOLUME_CONFIG: dict[Union[str, PurePosixPath], modal.Volume] = {\n    \"/pretrained\": pretrained_volume,\n    \"/runs\": runs_volume,\n}\nclass Colors:\n    \"\"\"ANSI color codes\"\"\"",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "runs_volume",
+        "kind": 5,
+        "importPath": "src.common",
+        "description": "src.common",
+        "peekOfCode": "runs_volume = modal.Volume.from_name(\"example-runs-vol\", create_if_missing=True)\nVOLUME_CONFIG: dict[Union[str, PurePosixPath], modal.Volume] = {\n    \"/pretrained\": pretrained_volume,\n    \"/runs\": runs_volume,\n}\nclass Colors:\n    \"\"\"ANSI color codes\"\"\"\n    GREEN = \"\\033[0;32m\"\n    BLUE = \"\\033[0;34m\"\n    GRAY = \"\\033[0;90m\"",
+        "detail": "src.common",
+        "documentation": {}
+    },
+    {
+        "label": "conv_openai_msg",
+        "kind": 2,
+        "importPath": "src.convert_dataset",
+        "description": "src.convert_dataset",
+        "peekOfCode": "def conv_openai_msg(msg):\n    return {\n        \"from\": \"human\" if msg[\"role\"] == \"user\" else \"assistant\",\n        \"value\": msg[\"content\"],\n    }\ndef main():\n    import json\n    # Read the JSONL file\n    with open(\"data/apply_template_train_200_openai.jsonl\", \"r\") as file:\n        data = [json.loads(line) for line in file]",
+        "detail": "src.convert_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.convert_dataset",
+        "description": "src.convert_dataset",
+        "peekOfCode": "def main():\n    import json\n    # Read the JSONL file\n    with open(\"data/apply_template_train_200_openai.jsonl\", \"r\") as file:\n        data = [json.loads(line) for line in file]\n    # Print the number of records read\n    print(f\"Read {len(data)} records from the JSONL file.\")\n    # Initialize a list to store the reformatted data\n    reformatted_data = []\n    # Reformat each record to ShareGPT format",
+        "detail": "src.convert_dataset",
+        "documentation": {}
+    },
+    {
+        "label": "Inference",
+        "kind": 6,
+        "importPath": "src.inference",
+        "description": "src.inference",
+        "peekOfCode": "class Inference:\n    def __init__(self, run_name: str = \"\", run_dir: str = \"/runs\") -> None:\n        self.run_name = run_name\n        self.run_dir = run_dir\n    @modal.enter()\n    def init(self):\n        if self.run_name:\n            path = Path(self.run_dir) / self.run_name\n            VOLUME_CONFIG[self.run_dir].reload()\n            model_path = get_model_path_from_run(path)",
+        "detail": "src.inference",
+        "documentation": {}
+    },
+    {
+        "label": "get_model_path_from_run",
+        "kind": 2,
+        "importPath": "src.inference",
+        "description": "src.inference",
+        "peekOfCode": "def get_model_path_from_run(path: Path) -> Path:\n    with (path / \"config.yml\").open() as f:\n        return path / yaml.safe_load(f.read())[\"output_dir\"] / \"merged\"\n@app.cls(\n    gpu=INFERENCE_GPU_CONFIG,\n    image=vllm_image,\n    volumes=VOLUME_CONFIG,\n    allow_concurrent_inputs=30,\n    container_idle_timeout=15 * MINUTES,\n)",
+        "detail": "src.inference",
+        "documentation": {}
+    },
+    {
+        "label": "inference_main",
+        "kind": 2,
+        "importPath": "src.inference",
+        "description": "src.inference",
+        "peekOfCode": "def inference_main(run_name: str = \"\", prompt: str = \"\"):\n    prompt = \"\"\"[INST]Please replace the text to say \\'The ripe adapter fears pilaf The spicy cast amuses canopy The rightful\\' in this svg, return just the svg and no explanation. \\n\\n<?xml version=\\'1.0\\' encoding=\\'utf8\\'?>\\n<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1920\" height=\"1080\" viewBox=\"0 0 1920 1080\" fill=\"none\">\\n\\t<g id=\"slide_title_long\">\\n\\t\\t<rect width=\"1920\" height=\"1080\" fill=\"#F40000\" id=\"!!!bg\" />\\n\\t\\t<image href=\"https://wcyb5qfzc4ygdwpj.public.blob.vercel-storage.com/image-extract/0730e0380cbaa4582444fdfb17bb1e9f-oYFr3viQMWRJaTD6IL68SJ7XCLunys.png\" id=\"logo-coca-cola-image\" x=\"214\" y=\"224\" width=\"413\" height=\"129\" alt=\"This image appears to be entirely blank or white. It\\'s a solid white rectangular area without any visible content, patterns, or distinguishing features. The image might not have loaded correctly, or it could be intentionally blank.\" preserveaspectratio=\"xMidYMid meet\" />\\n\\t\\t<text id=\"7c848dad-657a-4b11-96bb-aaaff867fdd4\" fill=\"white\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"TCCC-UnityHeadline\" font-size=\"142\" font-weight=\"bold\" letter-spacing=\"0em\">\\n\\t\\t\\t<tspan x=\"214\" y=\"559.64\" id=\"c1d03ac2-ecd0-4a9a-9120-3e046f4bebdd\">Slide title that </tspan>\\n\\t\\t\\t<tspan x=\"214\" y=\"693.64\" id=\"8fa98230-f1ef-4ca4-9e60-815f3684dcfa\">wraps on two lines</tspan>\\n\\t\\t</text>\\n\\t\\t<text id=\"edba6974-59eb-459d-ba09-d6c91110d49a\" fill=\"white\" xml:space=\"preserve\" style=\"white-space: pre\" font-family=\"TCCC-UnityText\" font-size=\"65\" letter-spacing=\"0em\">\\n\\t\\t\\t<tspan x=\"214\" y=\"802.3\" id=\"f8ffff69-0cb8-4666-886c-4c8d94a84302\">Subtitle text</tspan>\\n\\t\\t</text>\\n\\t</g>\\n\\t<defs id=\"00f8g22t\">\\n\\n\\n</defs>\\n</svg>[/INST]\"\"\"\n    if not prompt:\n        prompt = input(\n            \"Enter a prompt (including the prompt template, e.g. [INST] ... [/INST]):\\n\"\n        )\n    print(\n        Colors.GREEN, Colors.BOLD, f\"🧠: Querying model {run_name}\", Colors.END, sep=\"\"\n    )\n    response = \"\"",
+        "detail": "src.inference",
+        "documentation": {}
+    },
+    {
+        "label": "INFERENCE_GPU_CONFIG",
+        "kind": 5,
+        "importPath": "src.inference",
+        "description": "src.inference",
+        "peekOfCode": "INFERENCE_GPU_CONFIG = os.environ.get(\"INFERENCE_GPU_CONFIG\", \"a10g:2\")\nif len(INFERENCE_GPU_CONFIG.split(\":\")) <= 1:\n    N_INFERENCE_GPUS = int(os.environ.get(\"N_INFERENCE_GPUS\", 2))\n    INFERENCE_GPU_CONFIG = f\"{INFERENCE_GPU_CONFIG}:{N_INFERENCE_GPUS}\"\nelse:\n    N_INFERENCE_GPUS = int(INFERENCE_GPU_CONFIG.split(\":\")[-1])\nwith vllm_image.imports():\n    from vllm.engine.arg_utils import AsyncEngineArgs\n    from vllm.engine.async_llm_engine import AsyncLLMEngine\n    from vllm.sampling_params import SamplingParams",
+        "detail": "src.inference",
+        "documentation": {}
+    },
+    {
+        "label": "train",
+        "kind": 2,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "def train(run_folder: str, output_dir: str):\n    import torch\n    print(f\"Starting training run in {run_folder}.\")\n    print(f\"Using {torch.cuda.device_count()} {torch.cuda.get_device_name()} GPU(s).\")\n    ALLOW_WANDB = True  # os.environ.get(\"ALLOW_WANDB\", \"false\").lower() == \"true\"\n    cmd = f\"accelerate launch -m axolotl.cli.train ./config.yml {'--wandb_mode disabled' if not ALLOW_WANDB else ''}\"\n    run_cmd(cmd, run_folder)\n    # Kick off CPU job to merge the LoRA weights into base model.\n    merge_handle = merge.spawn(run_folder, output_dir)\n    with open(f\"{run_folder}/logs.txt\", \"a\") as f:",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "preproc_data",
+        "kind": 2,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "def preproc_data(run_folder: str):\n    print(\"Preprocessing data.\")\n    run_cmd(\n        \"python -W ignore:::torch.nn.modules.module -m axolotl.cli.preprocess ./config.yml\",\n        run_folder,\n    )\n@app.function(\n    image=axolotl_image,\n    gpu=SINGLE_GPU_CONFIG,\n    volumes=VOLUME_CONFIG,",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "merge",
+        "kind": 2,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "def merge(run_folder: str, output_dir: str):\n    import shutil\n    output_path = Path(run_folder) / output_dir\n    shutil.rmtree(output_path / \"merged\", ignore_errors=True)\n    with open(f\"{run_folder}/config.yml\"):\n        print(f\"Merge from {output_path}\")\n    MERGE_CMD = f\"accelerate launch -m axolotl.cli.merge_lora ./config.yml --lora_model_dir='{output_dir}'\"\n    run_cmd(MERGE_CMD, run_folder)\n    VOLUME_CONFIG[\"/runs\"].commit()\n@app.function(image=axolotl_image, timeout=30 * MINUTES, volumes=VOLUME_CONFIG)",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "launch",
+        "kind": 2,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "def launch(config_raw: dict, data_raw: str, run_to_resume: str, preproc_only: bool):\n    import yaml\n    from huggingface_hub import snapshot_download\n    # Ensure the base model is downloaded\n    # TODO(gongy): test if this works with a path to previous fine-tune\n    config = yaml.safe_load(config_raw)\n    model_name = config[\"base_model\"]\n    try:\n        snapshot_download(model_name, local_files_only=True)\n        print(f\"Volume contains {model_name}.\")",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "def main(\n    config: str,\n    data: str,\n    merge_lora: bool = True,\n    preproc_only: bool = False,\n    run_to_resume: str = None,\n):\n    # Read config and data source files and pass their contents to the remote function.\n    with open(config, \"r\") as cfg, open(data, \"r\") as dat:\n        run_name, launch_handle = launch.remote(",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "run_cmd",
+        "kind": 2,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "def run_cmd(cmd: str, run_folder: str):\n    \"\"\"Run a command inside a folder, with Modal Volume reloading before and commit on success.\"\"\"\n    import subprocess\n    # Ensure volumes contain latest files.\n    VOLUME_CONFIG[\"/pretrained\"].reload()\n    VOLUME_CONFIG[\"/runs\"].reload()\n    # Propagate errors from subprocess.\n    if exit_code := subprocess.call(cmd.split(), cwd=run_folder):\n        exit(exit_code)\n    # Commit writes to volume.",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "GPU_CONFIG",
+        "kind": 5,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "GPU_CONFIG = os.environ.get(\"GPU_CONFIG\", \"a100:2\")\nif len(GPU_CONFIG.split(\":\")) <= 1:\n    N_GPUS = int(os.environ.get(\"N_GPUS\", 2))\n    GPU_CONFIG = f\"{GPU_CONFIG}:{N_GPUS}\"\nSINGLE_GPU_CONFIG = os.environ.get(\"GPU_CONFIG\", \"a10g:1\")\n@app.function(\n    image=axolotl_image,\n    gpu=GPU_CONFIG,\n    volumes=VOLUME_CONFIG,\n    timeout=24 * HOURS,",
+        "detail": "src.train",
+        "documentation": {}
+    },
+    {
+        "label": "SINGLE_GPU_CONFIG",
+        "kind": 5,
+        "importPath": "src.train",
+        "description": "src.train",
+        "peekOfCode": "SINGLE_GPU_CONFIG = os.environ.get(\"GPU_CONFIG\", \"a10g:1\")\n@app.function(\n    image=axolotl_image,\n    gpu=GPU_CONFIG,\n    volumes=VOLUME_CONFIG,\n    timeout=24 * HOURS,\n)\ndef train(run_folder: str, output_dir: str):\n    import torch\n    print(f\"Starting training run in {run_folder}.\")",
+        "detail": "src.train",
+        "documentation": {}
+    }
+]

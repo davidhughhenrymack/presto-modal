@@ -23,7 +23,6 @@ SINGLE_GPU_CONFIG = os.environ.get("GPU_CONFIG", "a10g:1")
     gpu=GPU_CONFIG,
     volumes=VOLUME_CONFIG,
     timeout=24 * HOURS,
-    _allow_background_volume_commits=True,
 )
 def train(run_folder: str, output_dir: str):
     import torch
@@ -31,7 +30,7 @@ def train(run_folder: str, output_dir: str):
     print(f"Starting training run in {run_folder}.")
     print(f"Using {torch.cuda.device_count()} {torch.cuda.get_device_name()} GPU(s).")
 
-    ALLOW_WANDB = os.environ.get("ALLOW_WANDB", "false").lower() == "true"
+    ALLOW_WANDB = True  # os.environ.get("ALLOW_WANDB", "false").lower() == "true"
     cmd = f"accelerate launch -m axolotl.cli.train ./config.yml {'--wandb_mode disabled' if not ALLOW_WANDB else ''}"
     run_cmd(cmd, run_folder)
 
@@ -48,7 +47,6 @@ def train(run_folder: str, output_dir: str):
     gpu=SINGLE_GPU_CONFIG,
     volumes=VOLUME_CONFIG,
     timeout=24 * HOURS,
-    _allow_background_volume_commits=True,
 )
 def preproc_data(run_folder: str):
     print("Preprocessing data.")

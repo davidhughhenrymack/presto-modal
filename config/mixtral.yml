@@ -1,4 +1,4 @@
-base_model: mistralai/Mixtral-8x7B-Instruct-v0.1
+base_model: mistralai/Mixtral-8x7B-Instruct-v0.3
 trust_remote_code: true
 
 load_in_8bit: false
